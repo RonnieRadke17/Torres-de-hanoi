@@ -1,6 +1,7 @@
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
+using System.Drawing.Text;
 
 namespace Torres_de_hanoi
 {
@@ -84,24 +85,24 @@ namespace Torres_de_hanoi
                 //cubo1.Location = torre3Pos4;
                 acomodarEnXCubo1(3);
             }
-
+            //no mover lo de arriba
             //acomodar cubo 2
             if (cubo2.Location.X >= torre1PosX.Item1 && cubo2.Location.X <= torre1PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo2.Location = torre1Pos1;
+                acomodarEnXCubo2(1);
             }
 
             if (cubo2.Location.X >= torre2PosX.Item1 && cubo2.Location.X <= torre2PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo2.Location = torre2Pos4;
+                acomodarEnXCubo2(2);
             }
 
             if (cubo2.Location.X >= torre3PosX.Item1 && cubo2.Location.X <= torre3PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo2.Location = torre3Pos4;
+                acomodarEnXCubo2(3);
             }
 
             //acomodar cubo 3
@@ -127,19 +128,19 @@ namespace Torres_de_hanoi
             if (cubo4.Location.X >= torre1PosX.Item1 && cubo4.Location.X <= torre1PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo4.Location = torre1Pos1;
+                acomodarEnXCubo4(4);
             }
 
             if (cubo4.Location.X >= torre2PosX.Item1 && cubo4.Location.X <= torre2PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo4.Location = torre2Pos4;
+                acomodarEnXCubo4(2);
             }
 
             if (cubo4.Location.X >= torre3PosX.Item1 && cubo4.Location.X <= torre3PosX.Item2)
             {
                 //MessageBox.Show("son similareeeees");
-                //cubo4.Location = torre3Pos4;
+                acomodarEnXCubo4(3);
             }
         }
         private void acomodarEnXCubo1(int torre) {//c4>>c3>>c2>>c1
@@ -227,26 +228,271 @@ namespace Torres_de_hanoi
 
                     break;
 
-
             }
-           
-            
-            
-            
-
             //Point torre1Pos4 = new Point(37, 374);
             //Point torre1Pos3 = new Point(37, 317);
             //Point torre1Pos2 = new Point(37, 260);
             //Point torre1Pos1 = new Point(37, 203);
-
-
-
         }
 
+        private void acomodarEnXCubo2(int torre)
+        {
+            switch(torre) {//recuerda que no puede estar este cubo arriba del 1
+                case 1://falta validacion cubo 1
 
+                    if (cubo1.Location == torre1Pos4) {
+                        MessageBox.Show("error 2 torre 1");
+                        break;
+                    } else if (cubo1.Location == torre1Pos3 && cubo2.Location == torre1Pos4) {
+                        MessageBox.Show("error 2 torre 1");
+                        break;
+                    }else if (cubo1.Location == torre1Pos2)
+                    {
+                        MessageBox.Show("error 2 torre 1 pos 2");
+                        break;
+                    }
 
+                    if (cubo3.Location == torre1Pos4 || cubo4.Location == torre1Pos4)
+                    {
 
+                        if (cubo3.Location == torre1Pos3 || cubo4.Location == torre1Pos3)//cubo4 ya no sube aqui
+                        {
+                                cubo2.Location = torre1Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre1Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre1Pos4;
+                    }
 
+                    break;
+                case 2:
+                    if (cubo1.Location == torre2Pos4)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre2Pos3)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre2Pos2)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+
+                    if (cubo3.Location == torre2Pos4 || cubo4.Location == torre2Pos4)
+                    {
+
+                        if (cubo3.Location == torre2Pos3 || cubo4.Location == torre2Pos3)//cubo4 ya no sube aqui
+                        {
+                            cubo2.Location = torre2Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre2Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre2Pos4;
+                    }
+                    break;
+                case 3:
+                    if (cubo1.Location == torre3Pos4)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre3Pos3)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre3Pos2)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+
+                    if (cubo3.Location == torre3Pos4 || cubo4.Location == torre3Pos4)
+                    {
+
+                        if (cubo3.Location == torre3Pos3 || cubo4.Location == torre3Pos3)//cubo4 ya no sube aqui
+                        {
+                            cubo2.Location = torre3Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre3Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre3Pos4;
+                    }
+                    break;
+            }
+        }
+
+        private void acomodarEnXCubo3(int torre)
+        {
+            switch (torre)
+            {//recuerda que no puede estar este cubo arriba del 1
+                case 1://falta validacion cubo 1
+
+                    if (cubo1.Location == torre1Pos4)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre1Pos3)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre1Pos2)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+
+                    if (cubo3.Location == torre1Pos4 || cubo4.Location == torre1Pos4)
+                    {
+
+                        if (cubo3.Location == torre1Pos3 || cubo4.Location == torre1Pos3)//cubo4 ya no sube aqui
+                        {
+                            cubo2.Location = torre1Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre1Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre1Pos4;
+                    }
+
+                    break;
+                case 2:
+                    if (cubo1.Location == torre2Pos4)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre2Pos3)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre2Pos2)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+
+                    if (cubo3.Location == torre2Pos4 || cubo4.Location == torre2Pos4)
+                    {
+
+                        if (cubo3.Location == torre2Pos3 || cubo4.Location == torre2Pos3)//cubo4 ya no sube aqui
+                        {
+                            cubo2.Location = torre2Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre2Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre2Pos4;
+                    }
+                    break;
+                case 3:
+                    if (cubo1.Location == torre3Pos4)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre3Pos3)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+                    else if (cubo1.Location == torre3Pos2)
+                    {
+                        MessageBox.Show("error");
+                        break;
+                    }
+
+                    if (cubo3.Location == torre3Pos4 || cubo4.Location == torre3Pos4)
+                    {
+
+                        if (cubo3.Location == torre3Pos3 || cubo4.Location == torre3Pos3)//cubo4 ya no sube aqui
+                        {
+                            cubo2.Location = torre3Pos2;
+                        }
+                        else
+                        {
+                            cubo2.Location = torre3Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo2.Location = torre3Pos4;
+                    }
+                    break;
+            }
+        }
+
+        private void acomodarEnXCubo4(int torre)
+        {
+            switch (torre)
+            {//recuerda que no puede estar este cubo arriba del 1
+                case 1://falta validacion cubo 1
+
+                    if (cubo1.Location == torre1Pos4 || cubo2.Location == torre1Pos4 || cubo3.Location == torre1Pos4)
+                    {
+                        MessageBox.Show("error 4");
+                        break;
+                    }
+                    else
+                    {
+                        cubo4.Location = torre1Pos4;
+                    }
+
+                    break;
+                case 2:
+                    if (cubo1.Location == torre2Pos4 || cubo2.Location == torre2Pos4 || cubo3.Location == torre2Pos4)
+                    {
+                        MessageBox.Show("error 4");
+                        break;
+                    }
+                    else
+                    {
+                        cubo4.Location = torre2Pos4;
+                    }
+                    break;
+                case 3:
+                    if (cubo1.Location == torre3Pos4 || cubo2.Location == torre3Pos4 || cubo3.Location == torre3Pos4)
+                    {
+                        MessageBox.Show("error 4");
+                        break;
+                    }
+                    else
+                    {
+                        cubo4.Location = torre3Pos4;
+                    }
+                    break;
+            }
+        }
 
 
 
