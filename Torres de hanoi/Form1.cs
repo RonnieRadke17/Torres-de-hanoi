@@ -1,3 +1,7 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms;
+using Button = System.Windows.Forms.Button;
+
 namespace Torres_de_hanoi
 {
     public partial class Form1 : Form
@@ -49,20 +53,204 @@ namespace Torres_de_hanoi
         private void Ctr_MouseUp(object? sender, MouseEventArgs e)
         {
             down = false;
-            MessageBox.Show("hola");
-
-            acomodar();
+            //MessageBox.Show("hola");
+            acomodarEnY();
         }
 
-        private void acomodar()
+        private void acomodarEnY()//cambiar el cubo.Location de todos los ifs
         {
-            
-            if (cubo1.Location.X == torre2X)
+            var torre1PosX = (1,50);// 37
+            var torre2PosX = (300,370);// 336
+            var torre3PosX = (600, 670);// 637
+
+
+            //acomodar cubo 1
+            if (cubo1.Location.X >= torre1PosX.Item1 && cubo1.Location.X <= torre1PosX.Item2)
             {
-                MessageBox.Show("son similareeeees");
-                cubo1.Location = torre2Pos4;
+                //MessageBox.Show("son similareeeees
+                acomodarEnXCubo1(1);
+            }
+
+            if (cubo1.Location.X >= torre2PosX.Item1 && cubo1.Location.X <= torre2PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo1.Location = torre2Pos4;
+                acomodarEnXCubo1(2);
+            }
+
+            if (cubo1.Location.X >= torre3PosX.Item1 && cubo1.Location.X <= torre3PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo1.Location = torre3Pos4;
+                acomodarEnXCubo1(3);
+            }
+
+            //acomodar cubo 2
+            if (cubo2.Location.X >= torre1PosX.Item1 && cubo2.Location.X <= torre1PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo2.Location = torre1Pos1;
+            }
+
+            if (cubo2.Location.X >= torre2PosX.Item1 && cubo2.Location.X <= torre2PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo2.Location = torre2Pos4;
+            }
+
+            if (cubo2.Location.X >= torre3PosX.Item1 && cubo2.Location.X <= torre3PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo2.Location = torre3Pos4;
+            }
+
+            //acomodar cubo 3
+            if (cubo3.Location.X >= torre1PosX.Item1 && cubo3.Location.X <= torre1PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo3.Location = torre1Pos1;
+            }
+
+            if (cubo3.Location.X >= torre2PosX.Item1 && cubo3.Location.X <= torre2PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo3.Location = torre2Pos4;
+            }
+
+            if (cubo3.Location.X >= torre3PosX.Item1 && cubo3.Location.X <= torre3PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo3.Location = torre3Pos4;
+            }
+
+            //acomodar cubo 4
+            if (cubo4.Location.X >= torre1PosX.Item1 && cubo4.Location.X <= torre1PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo4.Location = torre1Pos1;
+            }
+
+            if (cubo4.Location.X >= torre2PosX.Item1 && cubo4.Location.X <= torre2PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo4.Location = torre2Pos4;
+            }
+
+            if (cubo4.Location.X >= torre3PosX.Item1 && cubo4.Location.X <= torre3PosX.Item2)
+            {
+                //MessageBox.Show("son similareeeees");
+                //cubo4.Location = torre3Pos4;
             }
         }
+        private void acomodarEnXCubo1(int torre) {//c4>>c3>>c2>>c1
+            //condiciones cubo 1
+            //cubo1 solo verificar que no halla nada debajo de el en las torres para asi ponerse o si hay algo ponerse ahi sin restriccion
+            switch (torre)
+            {
+                case 1:
+                    if (cubo2.Location == torre1Pos4 || cubo3.Location == torre1Pos4 || cubo4.Location == torre1Pos4)
+                    {
+
+                        if (cubo2.Location == torre1Pos3 || cubo3.Location == torre1Pos3 || cubo4.Location == torre1Pos3)
+                        {
+                            if (cubo2.Location == torre1Pos2 || cubo3.Location == torre1Pos2 || cubo4.Location == torre1Pos2)
+                            {
+                                cubo1.Location = torre1Pos1;
+                            }
+                            else
+                            {
+                                cubo1.Location = torre1Pos2;
+                            }
+                        }
+                        else
+                        {
+                            cubo1.Location = torre1Pos3;
+                        }
+                    }
+                    else { 
+                        cubo1.Location = torre1Pos4;
+                    }
+
+                    break;
+                case 2:
+                    if (cubo2.Location == torre2Pos4 || cubo3.Location == torre2Pos4 || cubo4.Location == torre2Pos4)
+                    {
+
+                        if (cubo2.Location == torre2Pos3 || cubo3.Location == torre2Pos3 || cubo4.Location == torre2Pos3)
+                        {
+                            if (cubo2.Location == torre2Pos2 || cubo3.Location == torre2Pos2 || cubo4.Location == torre2Pos2)
+                            {
+                                cubo1.Location = torre2Pos1;
+                            }
+                            else
+                            {
+                                cubo1.Location = torre2Pos2;
+                            }
+                        }
+                        else
+                        {
+                            cubo1.Location = torre2Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo1.Location = torre2Pos4;
+                    }
+
+                break;
+                case 3:
+                    if (cubo2.Location == torre3Pos4 || cubo3.Location == torre3Pos4 || cubo4.Location == torre3Pos4)
+                    {
+
+                        if (cubo2.Location == torre3Pos3 || cubo3.Location == torre3Pos3 || cubo4.Location == torre3Pos3)
+                        {
+                            if (cubo2.Location == torre3Pos2 || cubo3.Location == torre3Pos2 || cubo4.Location == torre3Pos2)
+                            {
+                                cubo1.Location = torre3Pos1;
+                            }
+                            else
+                            {
+                                cubo1.Location = torre3Pos2;
+                            }
+
+
+                        }
+                        else
+                        {
+                            cubo1.Location = torre3Pos3;
+                        }
+                    }
+                    else
+                    {
+                        cubo1.Location = torre3Pos4;
+                    }
+
+                    break;
+
+
+            }
+           
+            
+            
+            
+
+            //Point torre1Pos4 = new Point(37, 374);
+            //Point torre1Pos3 = new Point(37, 317);
+            //Point torre1Pos2 = new Point(37, 260);
+            //Point torre1Pos1 = new Point(37, 203);
+
+
+
+        }
+
+
+
+
+
+
+
+
+
 
         private void Ctr_MouseDown(object? sender, MouseEventArgs e)
         {

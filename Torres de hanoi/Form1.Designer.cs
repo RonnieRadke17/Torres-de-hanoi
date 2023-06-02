@@ -36,14 +36,6 @@
             cubo3 = new Button();
             cubo2 = new Button();
             cubo1 = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)palosDeTorre).BeginInit();
             SuspendLayout();
             // 
@@ -126,115 +118,11 @@
             cubo1.Text = "1";
             cubo1.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
-            button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(336, 203);
-            button1.Name = "button1";
-            button1.Size = new Size(179, 60);
-            button1.TabIndex = 13;
-            button1.Text = "1";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.ActiveCaptionText;
-            button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(336, 260);
-            button2.Name = "button2";
-            button2.Size = new Size(179, 60);
-            button2.TabIndex = 12;
-            button2.Text = "2";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.ActiveCaptionText;
-            button3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(336, 317);
-            button3.Name = "button3";
-            button3.Size = new Size(179, 60);
-            button3.TabIndex = 11;
-            button3.Text = "3";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ActiveCaption;
-            button4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(336, 374);
-            button4.Name = "button4";
-            button4.Size = new Size(179, 60);
-            button4.TabIndex = 10;
-            button4.Text = "4";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = SystemColors.ActiveCaptionText;
-            button5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(637, 203);
-            button5.Name = "button5";
-            button5.Size = new Size(179, 60);
-            button5.TabIndex = 17;
-            button5.Text = "1";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = SystemColors.ActiveCaptionText;
-            button6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(637, 260);
-            button6.Name = "button6";
-            button6.Size = new Size(179, 60);
-            button6.TabIndex = 16;
-            button6.Text = "2";
-            button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            button7.BackColor = SystemColors.ActiveCaptionText;
-            button7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Location = new Point(637, 317);
-            button7.Name = "button7";
-            button7.Size = new Size(179, 60);
-            button7.TabIndex = 15;
-            button7.Text = "3";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = SystemColors.ActiveCaptionText;
-            button8.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.ForeColor = SystemColors.ButtonHighlight;
-            button8.Location = new Point(637, 374);
-            button8.Name = "button8";
-            button8.Size = new Size(179, 60);
-            button8.TabIndex = 14;
-            button8.Text = "4";
-            button8.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(850, 482);
-            Controls.Add(button5);
-            Controls.Add(button6);
-            Controls.Add(button7);
-            Controls.Add(button8);
-            Controls.Add(button1);
-            Controls.Add(button2);
-            Controls.Add(button3);
-            Controls.Add(button4);
             Controls.Add(cubo1);
             Controls.Add(cubo2);
             Controls.Add(cubo3);
@@ -259,13 +147,5 @@
         private Button cubo3;
         private Button cubo2;
         private Button cubo1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
     }
 }
